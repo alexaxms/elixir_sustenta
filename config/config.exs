@@ -33,4 +33,10 @@ config :sustenta, :pow,
   user: Sustenta.Users.User,
   repo: Sustenta.Repo
 
+config :phoenix, :template_engines,
+  slim: PhoenixSlime.Engine,
+  slime: PhoenixSlime.Engine,
+  slimleex: PhoenixSlime.LiveViewEngine  
+
+config :phoenix_slime, :use_slim_extension, true
   
