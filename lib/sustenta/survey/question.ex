@@ -16,4 +16,5 @@ defmodule Sustenta.Survey.Question do
     |> cast(attrs, [:question, :type])
     |> validate_required([:question, :type])
   end
+
 end
