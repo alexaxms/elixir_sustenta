@@ -27,7 +27,11 @@ defmodule SustentaWeb.Router do
 
   scope "/", SustentaWeb do
     pipe_through [:browser, :protected]
-
+    scope "/config" do
+      resources "/ambits", AmbitController do
+        resources "/standards", StandardController
+      end  
+    end
     resources "/survey_questions", QuestionController do
       resources "/survey_answers", AnswerController
     end

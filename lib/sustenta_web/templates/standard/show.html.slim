@@ -1,0 +1,13 @@
+h2 Show Standard
+
+ul
+  li
+    strong Number:&nbsp;
+    = @standard.number
+  li
+    strong Name:&nbsp;
+    = @standard.name
+
+= link "Edit", to: Routes.ambit_standard_path(@conn, :edit, @ambit, @standard)
+| &nbsp;
+= link "Back", to: Routes.ambit_standard_path(@conn, :index, @ambit)

@@ -11,6 +11,9 @@ msgstr ""
 #, elixir-format
 #: lib/sustenta_web/templates/answer/edit.html.slim:1
 #: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/answer/show.html.slim:1
+#: lib/sustenta_web/templates/answer/show.html.slim:1
 msgid "Answer"
 msgstr ""
 
@@ -21,30 +24,56 @@ msgstr ""
 
 #, elixir-format
 #: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/standard/index.html.slim:1
 msgid "Delete"
 msgstr ""
 
 #, elixir-format
 #: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/standard/index.html.slim:1
 msgid "Edit"
 msgstr ""
 
 #, elixir-format
 #: lib/sustenta_web/templates/answer/index.html.slim:1
-msgid "New Answer"
-msgstr ""
-
-#, elixir-format
-#: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/answer/show.html.slim:1
 msgid "Raw score"
 msgstr ""
 
 #, elixir-format
 #: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/standard/index.html.slim:1
 msgid "Show"
 msgstr ""
 
 #, elixir-format
 #: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/answer/show.html.slim:1
 msgid "Type"
+msgstr ""
+
+#, elixir-format
+#: lib/sustenta_web/templates/question/index.html.slim:1
+msgid "Answers"
+msgstr ""
+
+#, elixir-format
+#: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/standard/index.html.slim:1
+msgid "New %{name}"
+msgstr ""
+
+#, elixir-format
+#: lib/sustenta_web/templates/answer/show.html.slim:1
+msgid "Show %{name}"
+msgstr ""
+
+#, elixir-format
+#: lib/sustenta_web/templates/ambit/index.html.slim:1
+msgid "Standards"
+msgstr ""
+
+#, elixir-format
+#: lib/sustenta_web/templates/standard/index.html.slim:1
+msgid "standard"
 msgstr ""

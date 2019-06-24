@@ -19,6 +19,9 @@ msgstr "Bienvenido a %{name}!"
 #, elixir-format
 #: lib/sustenta_web/templates/answer/edit.html.slim:1
 #: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/answer/show.html.slim:1
+#: lib/sustenta_web/templates/answer/show.html.slim:1
 msgid "Answer"
 msgstr "Respuesta"
 
@@ -29,30 +32,56 @@ msgstr "Editar %{name}"
 
 #, elixir-format
 #: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/standard/index.html.slim:1
 msgid "Delete"
 msgstr "Eliminar"
 
 #, elixir-format
 #: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/standard/index.html.slim:1
 msgid "Edit"
 msgstr "Editar"
 
 #, elixir-format
 #: lib/sustenta_web/templates/answer/index.html.slim:1
-msgid "New %{name}"
-msgstr "Nuevo %{name}"
-
-#, elixir-format
-#: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/answer/show.html.slim:1
 msgid "Raw score"
 msgstr "Puntaje bruto"
 
 #, elixir-format
 #: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/standard/index.html.slim:1
 msgid "Show"
 msgstr "Ver"
 
 #, elixir-format
 #: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/answer/show.html.slim:1
 msgid "Type"
 msgstr "Tipo"
+
+#, elixir-format, fuzzy
+#: lib/sustenta_web/templates/question/index.html.slim:1
+msgid "Answers"
+msgstr "Respuesta"
+
+#, elixir-format
+#: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/standard/index.html.slim:1
+msgid "New %{name}"
+msgstr "Nuevo %{name}"
+
+#, elixir-format, fuzzy
+#: lib/sustenta_web/templates/answer/show.html.slim:1
+msgid "Show %{name}"
+msgstr "Nuevo %{name}"
+
+#, elixir-format
+#: lib/sustenta_web/templates/ambit/index.html.slim:1
+msgid "Standards"
+msgstr "Criterios"
+
+#, elixir-format
+#: lib/sustenta_web/templates/standard/index.html.slim:1
+msgid "standard"
+msgstr "criterio"

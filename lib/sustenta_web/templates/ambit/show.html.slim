@@ -1,0 +1,13 @@
+h2 Show Ambit
+
+ul
+  li
+    strong Number:&nbsp;
+    = @ambit.number
+  li
+    strong Name:&nbsp;
+    = @ambit.name
+
+= link "Edit", to: Routes.ambit_path(@conn, :edit, @ambit)
+| &nbsp;
+= link "Back", to: Routes.ambit_path(@conn, :index)

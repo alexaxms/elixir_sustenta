@@ -1,0 +1,23 @@
+h2 Listing Config ambits
+
+table.table
+  thead
+    tr
+      th Number
+      th Name
+      th
+  tbody
+    = for ambit <- @config_ambits do
+      tr
+        td= ambit.number
+        td= ambit.name
+        td class="text-right"
+          = link gettext("Standards"), to: Routes.ambit_standard_path(@conn, :index, ambit)
+          | &nbsp;
+          = link "Show", to: Routes.ambit_path(@conn, :show, ambit), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.ambit_path(@conn, :edit, ambit), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.ambit_path(@conn, :delete, ambit), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Ambit", to: Routes.ambit_path(@conn, :new)
