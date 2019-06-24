@@ -1,0 +1,23 @@
+h2 Listing Survey answers
+
+table.table
+  thead
+    tr
+      th Answer
+      th Raw score
+      th Type
+      th
+  tbody
+    = for answer <- @survey_answers do
+      tr
+        td= answer.answer
+        td= answer.raw_score
+        td= answer.type
+        td class="text-right"
+          = link "Show", to: Routes.answer_path(@conn, :show, answer), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.answer_path(@conn, :edit, answer), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.answer_path(@conn, :delete, answer), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Answer", to: Routes.answer_path(@conn, :new)

@@ -1,0 +1,16 @@
+h2 Show Answer
+
+ul
+  li
+    strong Answer:&nbsp;
+    = @answer.answer
+  li
+    strong Raw score:&nbsp;
+    = @answer.raw_score
+  li
+    strong Type:&nbsp;
+    = @answer.type
+
+= link "Edit", to: Routes.answer_path(@conn, :edit, @answer)
+| &nbsp;
+= link "Back", to: Routes.answer_path(@conn, :index)

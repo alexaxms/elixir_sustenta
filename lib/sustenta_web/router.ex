@@ -18,7 +18,9 @@ defmodule SustentaWeb.Router do
     pipe_through :browser
 
     pow_routes()
-    resources "/survey_questions", SustentaWeb.QuestionController
+    resources "/survey_questions", SustentaWeb.QuestionController do
+      resources "/survey_answers", SustentaWeb.AnswerController
+    end
   end
 
   scope "/", SustentaWeb do

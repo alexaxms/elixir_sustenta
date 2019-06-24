@@ -4,9 +4,11 @@ defmodule Sustenta.Survey do
   """
 
   import Ecto.Query, warn: false
+  import Ecto
   alias Sustenta.Repo
 
   alias Sustenta.Survey.Question
+  alias Sustenta.Survey.Answer
 
   @doc """
   Returns the list of survey_questions.
@@ -92,4 +94,17 @@ defmodule Sustenta.Survey do
 
   """
   def change_question(%Question{} = question), do: Question.changeset(question, %{})
+
+  ## Answer
+  @doc """
+  Returns the list of survey_answers.
+
+  ## Examples
+
+      iex> list_survey_answers()
+      [%Question{}, ...]
+
+  """
+  def list_survey_answers(question), do: Repo.all(assoc(question, :answers))
+
 end
