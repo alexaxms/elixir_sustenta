@@ -1,0 +1,13 @@
+h2 Show Question
+
+ul
+  li
+    strong Question:&nbsp;
+    = @question.question
+  li
+    strong Type:&nbsp;
+    = @question.type
+
+= link "Edit", to: Routes.question_path(@conn, :edit, @question)
+| &nbsp;
+= link "Back", to: Routes.question_path(@conn, :index)

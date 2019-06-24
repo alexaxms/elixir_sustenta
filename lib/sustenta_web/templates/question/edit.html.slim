@@ -1,0 +1,5 @@
+h2 Edit Question
+
+= render "form.html", Map.put(assigns, :action, Routes.question_path(@conn, :update, @question))
+
+= link "Back", to: Routes.question_path(@conn, :index)
