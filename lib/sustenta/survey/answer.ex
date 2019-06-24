@@ -3,6 +3,7 @@ defmodule Sustenta.Survey.Answer do
   import Ecto.Changeset
 
   schema "survey_answers" do
+    field :order, :integer
     field :answer, :string
     field :raw_score, :integer
     field :type, :integer
@@ -14,7 +15,7 @@ defmodule Sustenta.Survey.Answer do
   @doc false
   def changeset(answer, attrs) do
     answer
-    |> cast(attrs, [:answer, :raw_score, :type])
-    |> validate_required([:answer, :raw_score, :type])
+    |> cast(attrs, [:order, :answer, :raw_score, :type])
+    |> validate_required([:order, :answer, :raw_score, :type])
   end
 end

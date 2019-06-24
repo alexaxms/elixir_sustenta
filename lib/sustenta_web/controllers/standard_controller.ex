@@ -25,7 +25,7 @@ defmodule SustentaWeb.StandardController do
         |> redirect(to: Routes.ambit_standard_path(conn, :show, ambit, standard))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "new.html", changeset: changeset, ambit: ambit)
     end
   end
 
@@ -53,7 +53,7 @@ defmodule SustentaWeb.StandardController do
         |> redirect(to: Routes.ambit_standard_path(conn, :show, ambit, standard))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", standard: standard, changeset: changeset)
+        render(conn, "edit.html", standard: standard, changeset: changeset, ambit: ambit)
     end
   end
 

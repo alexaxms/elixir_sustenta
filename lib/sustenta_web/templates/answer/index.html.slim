@@ -3,6 +3,7 @@ h2 = link @question.question, to: Routes.question_path(@conn, :show, @question),
 table.table
   thead
     tr
+      th Order
       th = gettext "Answer"
       th = gettext "Raw score"
       th = gettext "Type"
@@ -10,6 +11,7 @@ table.table
   tbody
     = for answer <- @survey_answers do
       tr
+        td= answer.order
         td= answer.answer
         td= answer.raw_score
         td= answer.type

@@ -25,7 +25,7 @@ defmodule SustentaWeb.AnswerController do
         |> redirect(to: Routes.question_answer_path(conn, :show, question, answer))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "new.html", changeset: changeset, question: question)
     end
   end
 
@@ -53,7 +53,7 @@ defmodule SustentaWeb.AnswerController do
         |> redirect(to: Routes.question_answer_path(conn, :show, question, answer))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", answer: answer, changeset: changeset)
+        render(conn, "edit.html", answer: answer, question: question, changeset: changeset)
     end
   end
 

@@ -2,6 +2,9 @@ h2 = gettext("Show %{name}", name: gettext "Answer")
 
 ul
   li
+    strong = "Orden: "
+    = @answer.order
+  li
     strong = gettext("Answer")<>": "
     = @answer.answer
   li
