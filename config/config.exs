@@ -29,6 +29,8 @@ config :phoenix, :json_library, Jason
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
 
+config :sustenta, SustentaWeb.Gettext, default_locale: "es"
+
 config :sustenta, :pow,
   user: Sustenta.Users.User,
   repo: Sustenta.Repo

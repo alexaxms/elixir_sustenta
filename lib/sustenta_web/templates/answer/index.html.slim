@@ -3,9 +3,9 @@ h2 Listing Survey answers
 table.table
   thead
     tr
-      th Answer
-      th Raw score
-      th Type
+      th = gettext "Answer"
+      th = gettext "Raw score"
+      th = gettext "Type"
       th
   tbody
     = for answer <- @survey_answers do
@@ -14,10 +14,10 @@ table.table
         td= answer.raw_score
         td= answer.type
         td class="text-right"
-          = link "Show", to: Routes.question_answer_path(@conn, :show, @question, answer), class: "btn btn-default btn-xs"
+          = link (gettext "Show"), to: Routes.question_answer_path(@conn, :show, @question, answer), class: "btn btn-default btn-xs"
           | &nbsp;
-          = link "Edit", to: Routes.question_answer_path(@conn, :edit, @question, answer), class: "btn btn-default btn-xs"
+          = link (gettext "Edit"), to: Routes.question_answer_path(@conn, :edit, @question, answer), class: "btn btn-default btn-xs"
           | &nbsp;
-          = link "Delete", to: Routes.question_answer_path(@conn, :delete, @question, answer), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+          = link (gettext "Delete"), to: Routes.question_answer_path(@conn, :delete, @question, answer), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
 
-= link "New Answer", to: Routes.question_answer_path(@conn, :new, @question)
+= link gettext("New %{name}", name: gettext "Answer"), to: Routes.question_answer_path(@conn, :new, @question)

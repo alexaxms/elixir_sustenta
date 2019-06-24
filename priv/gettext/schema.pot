@@ -1,0 +1,53 @@
+# Sustenta.Survey.Answer
+msgid "Sustenta.Survey.Answer.id"
+msgstr ""
+
+msgid "Sustenta.Survey.Answer.answer"
+msgstr ""
+
+msgid "Sustenta.Survey.Answer.raw_score"
+msgstr ""
+
+msgid "Sustenta.Survey.Answer.type"
+msgstr ""
+
+msgid "Sustenta.Survey.Answer.question_id"
+msgstr ""
+
+msgid "Sustenta.Survey.Answer.inserted_at"
+msgstr ""
+
+msgid "Sustenta.Survey.Answer.updated_at"
+msgstr ""
+
+# Sustenta.Survey.Question
+msgid "Sustenta.Survey.Question.id"
+msgstr ""
+
+msgid "Sustenta.Survey.Question.question"
+msgstr ""
+
+msgid "Sustenta.Survey.Question.type"
+msgstr ""
+
+msgid "Sustenta.Survey.Question.inserted_at"
+msgstr ""
+
+msgid "Sustenta.Survey.Question.updated_at"
+msgstr ""
+
+# Sustenta.Users.User
+msgid "Sustenta.Users.User.id"
+msgstr ""
+
+msgid "Sustenta.Users.User.password_hash"
+msgstr ""
+
+msgid "Sustenta.Users.User.email"
+msgstr ""
+
+msgid "Sustenta.Users.User.inserted_at"
+msgstr ""
+
+msgid "Sustenta.Users.User.updated_at"
+msgstr ""

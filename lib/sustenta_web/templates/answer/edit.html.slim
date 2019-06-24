@@ -1,4 +1,4 @@
-h2 Edit Answer
+h2 = gettext "Edit %{name}", name: gettext "Answer"
 
 = render "form.html", Map.put(assigns, :action, Routes.question_answer_path(@conn, :update, @question, @answer))
 

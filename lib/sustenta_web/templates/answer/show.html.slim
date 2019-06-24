@@ -1,14 +1,14 @@
-h2 Show Answer
+h2 = gettext("Show %{name}", name: gettext "Answer")
 
 ul
   li
-    strong Answer:&nbsp;
+    strong = gettext("Answer")<>": "
     = @answer.answer
   li
-    strong Raw score:&nbsp;
+    strong = gettext("Raw score")<>": "
     = @answer.raw_score
   li
-    strong Type:&nbsp;
+    strong = gettext("Type")<>": "
     = @answer.type
 
 = link "Edit", to: Routes.question_answer_path(@conn, :edit, @question, @answer)

@@ -44,7 +44,8 @@ defmodule Sustenta.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:pow, "~> 1.0.11"},
-      {:phoenix_slime, "~> 0.12.0"}
+      {:phoenix_slime, "~> 0.12.0"},
+      {:gettext_schema_field, "~> 0.1.0"}
     ]
   end
 
