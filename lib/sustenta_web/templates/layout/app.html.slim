@@ -8,22 +8,31 @@ html lang="en"
     meta content="" name="author"
     title Hello Sustenta!
     link rel="stylesheet" href="#{Routes.static_path(@conn, "/css/app.css")}"
+    link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css" rel="stylesheet" 
 
   body
     .container
       header.header
-        nav role="navigation"
-          ul.nav.nav-pills.pull-right
-            = if @current_user do 
-              li = "Signed in as: #{@current_user.email}"
-              li = link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete 
-              li = link "Edit account", to: Routes.pow_registration_path(@conn, :edit)
-            - else
-              li = link "Sign in", to: Routes.pow_session_path(@conn, :new)
-              li = link "Sign up", to: Routes.pow_registration_path(@conn, :new)
-            li =  link "Preguntas", to: Routes.question_path(@conn, :index)
-            li =  link "Ámbitos", to: Routes.ambit_path(@conn, :index)
-            
+        nav.navbar aria-label=("dropdown navigation") role="navigation" 
+          .navbar-menu
+            .navbar-start
+              = link "Preguntas", to: Routes.question_path(@conn, :index), class: "navbar-item"
+              .navbar-item.has-dropdown.is-hoverable
+                = link "Ámbitos", to: Routes.ambit_path(@conn, :index), class: "navbar-link"
+                .navbar-dropdown.is-boxed
+                  = for ambit <- ambits do
+                    = link ambit.name, to: Routes.ambit_path(@conn, :show, ambit), class: "navbar-item"
+            .navbar-end
+              = if @current_user do 
+                .navbar-item.has-dropdown.is-hoverable
+                  a.navbar-link
+                    = @current_user.email
+                  .navbar-dropdown.is-boxed
+                    = link "Cerrar Sesión", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "navbar-item"
+                    = link "Editar cuenta", to: Routes.pow_registration_path(@conn, :edit), class: "navbar-item"
+              - else
+                = link "Ingresar", to: Routes.pow_session_path(@conn, :new), class: "navbar-item"
+                = link "Registrarse", to: Routes.pow_registration_path(@conn, :new), class: "navbar-item"
         span.logo
 
       p.alert.alert-info role="alert"= get_flash(@conn, :info)

@@ -1,7 +1,7 @@
 = form_for @changeset, @action, fn f ->
   = if @changeset.action do
     .alert.alert-danger
-      p Oops, something went wrong! Please check the errors below.
+      p Algo anda mal! Por favor verifica los siguentes errores.
   .form-group
     = label f, :order, class: "control-label"
     = number_input f, :order, class: "form-control"
