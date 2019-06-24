@@ -11,6 +11,6 @@ ul
     strong Type:&nbsp;
     = @answer.type
 
-= link "Edit", to: Routes.answer_path(@conn, :edit, @answer)
+= link "Edit", to: Routes.question_answer_path(@conn, :edit, @question, @answer)
 | &nbsp;
-= link "Back", to: Routes.answer_path(@conn, :index)
+= link "Back", to: Routes.question_answer_path(@conn, :index, @question)

@@ -1,4 +1,4 @@
-defmodule Sustenta.Survey.Survey do
+defmodule Sustenta.Survey.SurveyServer do
     use GenServer
     alias Sustenta.Repo
     alias Sustenta.Survey.{Answer, Question}

@@ -8,7 +8,6 @@ defmodule Sustenta.Survey do
   alias Sustenta.Repo
 
   alias Sustenta.Survey.Question
-  alias Sustenta.Survey.Answer
 
   @doc """
   Returns the list of survey_questions.
@@ -105,6 +104,37 @@ defmodule Sustenta.Survey do
       [%Question{}, ...]
 
   """
+
+  alias Sustenta.Survey.Answer
+  
   def list_survey_answers(question), do: Repo.all(assoc(question, :answers))
 
+  def get_answer!(id), do: Repo.get!(Answer, id)
+
+  def build_answer(question) do 
+    question
+    |> build_assoc(:answers)
+    |> Answer.changeset(%{})
+  end
+
+  def create_answer(question, attrs \\ %{}) do
+    question
+    |> build_assoc(:answers)
+    |> Answer.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @spec change_answer(
+          {map, map}
+          | %{:__struct__ => atom | %{__changeset__: map}, optional(atom) => any}
+        ) :: Ecto.Changeset.t()
+  def change_answer(answer), do: Answer.changeset(answer, %{})
+
+  def update_answer(%Answer{} = answer, attrs) do
+    answer
+    |> Answer.changeset(attrs)
+    |> Repo.update()
+  end
+
+  def delete_answer(%Answer{} = answer), do: Repo.delete(answer)
 end
