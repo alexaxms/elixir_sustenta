@@ -10,6 +10,11 @@ defmodule SustentaWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :protected do
+    plug Pow.Plug.RequireAuthenticated,
+      error_handler: Pow.Phoenix.PlugErrorHandler
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -18,8 +23,13 @@ defmodule SustentaWeb.Router do
     pipe_through :browser
 
     pow_routes()
-    resources "/survey_questions", SustentaWeb.QuestionController do
-      resources "/survey_answers", SustentaWeb.AnswerController
+  end
+
+  scope "/", SustentaWeb do
+    pipe_through [:browser, :protected]
+
+    resources "/survey_questions", QuestionController do
+      resources "/survey_answers", AnswerController
     end
   end
 
