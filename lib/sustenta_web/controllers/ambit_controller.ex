@@ -27,7 +27,7 @@ defmodule SustentaWeb.AmbitController do
   end
 
   def show(conn, %{"id" => id}) do
-    ambit = Config.get_ambit!(id)
+    ambit = Config.get_ambit_with_standards!(id)
     render(conn, "show.html", ambit: ambit)
   end
 

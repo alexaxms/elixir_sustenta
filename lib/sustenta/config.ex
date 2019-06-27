@@ -8,6 +8,8 @@ defmodule Sustenta.Config do
   alias Sustenta.Repo
 
   alias Sustenta.Config.Ambit
+  alias Sustenta.Config.Standard
+  alias Sustenta.Config
 
   @doc """
   Returns the list of config_ambits.
@@ -20,6 +22,10 @@ defmodule Sustenta.Config do
   """
   def list_config_ambits do
     Repo.all(Ambit)
+  end
+
+  def list_ambits_with_standards do
+    Config.list_config_ambits |> Repo.preload([:standards])
   end
 
   @doc """
@@ -37,6 +43,8 @@ defmodule Sustenta.Config do
 
   """
   def get_ambit!(id), do: Repo.get!(Ambit, id)
+  
+  def get_ambit_with_standards!(id), do: get_ambit!(id) |> Repo.preload([standards: (from s in Standard, order_by: s.number)])
 
   @doc """
   Creates a ambit.

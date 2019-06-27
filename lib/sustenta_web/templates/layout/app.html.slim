@@ -6,34 +6,13 @@ html lang="en"
     meta content="width=device-width, initial-scale=1" name="viewport"
     meta content="" name="description"
     meta content="" name="author"
-    title Hello Sustenta!
+    title Premio Sustenta
     link rel="stylesheet" href="#{Routes.static_path(@conn, "/css/app.css")}"
     link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css" rel="stylesheet" 
 
   body
     .container
-      header.header
-        nav.navbar aria-label=("dropdown navigation") role="navigation" 
-          .navbar-menu
-            .navbar-start
-              = link "Preguntas", to: Routes.question_path(@conn, :index), class: "navbar-item"
-              .navbar-item.has-dropdown.is-hoverable
-                = link "Ámbitos", to: Routes.ambit_path(@conn, :index), class: "navbar-link"
-                .navbar-dropdown.is-boxed
-                  = for ambit <- ambits do
-                    = link ambit.name, to: Routes.ambit_path(@conn, :show, ambit), class: "navbar-item"
-            .navbar-end
-              = if @current_user do 
-                .navbar-item.has-dropdown.is-hoverable
-                  a.navbar-link
-                    = @current_user.email
-                  .navbar-dropdown.is-boxed
-                    = link "Cerrar Sesión", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "navbar-item"
-                    = link "Editar cuenta", to: Routes.pow_registration_path(@conn, :edit), class: "navbar-item"
-              - else
-                = link "Ingresar", to: Routes.pow_session_path(@conn, :new), class: "navbar-item"
-                = link "Registrarse", to: Routes.pow_registration_path(@conn, :new), class: "navbar-item"
-        span.logo
+      = render "header.html", conn: @conn, current_user: @current_user
 
       p.alert.alert-info role="alert"= get_flash(@conn, :info)
       p.alert.alert-danger role="alert"= get_flash(@conn, :error)

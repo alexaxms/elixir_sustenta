@@ -11,3 +11,29 @@ ul
 = link "Edit", to: Routes.ambit_path(@conn, :edit, @ambit)
 | &nbsp;
 = link "Back", to: Routes.ambit_path(@conn, :index)
+br
+br
+h2 Criterios
+br
+br
+
+table.table
+  thead
+    tr
+      th Number
+      th Name
+      th
+  tbody
+    = for standard <- @ambit.standards do
+      tr
+        td= standard.number
+        td= standard.name
+        td class="text-right"
+          = link (gettext "Show"), to: Routes.ambit_standard_path(@conn, :show, @ambit, standard), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link (gettext "Edit"), to: Routes.ambit_standard_path(@conn, :edit, @ambit, standard), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link (gettext "Delete"), to: Routes.ambit_standard_path(@conn, :delete, @ambit, standard), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link gettext("New %{name}", name: gettext "standard"), to: Routes.ambit_standard_path(@conn, :new, @ambit)
+

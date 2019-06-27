@@ -3,6 +3,6 @@ defmodule SustentaWeb.LayoutView do
   alias Sustenta.Config
 
   def ambits do
-    Config.list_config_ambits
+    Config.list_ambits_with_standards
   end
 end
