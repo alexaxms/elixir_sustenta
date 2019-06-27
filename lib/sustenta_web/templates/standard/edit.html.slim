@@ -2,4 +2,4 @@ h2 Edit Standard
 
 = render "form.html", Map.put(assigns, :action, Routes.ambit_standard_path(@conn, :update, @ambit, @standard))
 
-= link "Back", to: Routes.ambit_standard_path(@conn, :index, @ambit)
+= link gettext("Back"), to: Routes.ambit_standard_path(@conn, :index, @ambit)

@@ -31,14 +31,21 @@ msgid "Edit %{name}"
 msgstr "Editar %{name}"
 
 #, elixir-format
+#: lib/sustenta_web/templates/ambit/index.html.slim:1
+#: lib/sustenta_web/templates/ambit/show.html.slim:1
 #: lib/sustenta_web/templates/answer/index.html.slim:1
 #: lib/sustenta_web/templates/standard/index.html.slim:1
+#: lib/sustenta_web/templates/standard/show.html.slim:1
 msgid "Delete"
 msgstr "Eliminar"
 
 #, elixir-format
+#: lib/sustenta_web/templates/ambit/index.html.slim:1
+#: lib/sustenta_web/templates/ambit/show.html.slim:1
 #: lib/sustenta_web/templates/answer/index.html.slim:1
 #: lib/sustenta_web/templates/standard/index.html.slim:1
+#: lib/sustenta_web/templates/standard/show.html.slim:1
+#: lib/sustenta_web/templates/standard/show.html.slim:1
 msgid "Edit"
 msgstr "Editar"
 
@@ -49,8 +56,11 @@ msgid "Raw score"
 msgstr "Puntaje bruto"
 
 #, elixir-format
+#: lib/sustenta_web/templates/ambit/index.html.slim:1
+#: lib/sustenta_web/templates/ambit/show.html.slim:1
 #: lib/sustenta_web/templates/answer/index.html.slim:1
 #: lib/sustenta_web/templates/standard/index.html.slim:1
+#: lib/sustenta_web/templates/standard/show.html.slim:1
 msgid "Show"
 msgstr "Ver"
 
@@ -60,18 +70,19 @@ msgstr "Ver"
 msgid "Type"
 msgstr "Tipo"
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/sustenta_web/templates/question/index.html.slim:1
 msgid "Answers"
 msgstr "Respuesta"
 
 #, elixir-format
+#: lib/sustenta_web/templates/ambit/show.html.slim:1
 #: lib/sustenta_web/templates/answer/index.html.slim:1
 #: lib/sustenta_web/templates/standard/index.html.slim:1
 msgid "New %{name}"
 msgstr "Nuevo %{name}"
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/sustenta_web/templates/answer/show.html.slim:1
 msgid "Show %{name}"
 msgstr "Nuevo %{name}"
@@ -82,6 +93,26 @@ msgid "Standards"
 msgstr "Criterios"
 
 #, elixir-format
+#: lib/sustenta_web/templates/ambit/show.html.slim:1
 #: lib/sustenta_web/templates/standard/index.html.slim:1
 msgid "standard"
 msgstr "criterio"
+
+#, elixir-format
+#: lib/sustenta_web/templates/ambit/edit.html.slim:1
+#: lib/sustenta_web/templates/ambit/new.html.slim:1
+#: lib/sustenta_web/templates/ambit/show.html.slim:1
+#: lib/sustenta_web/templates/answer/edit.html.slim:1
+#: lib/sustenta_web/templates/answer/new.html.slim:1
+#: lib/sustenta_web/templates/answer/show.html.slim:1
+#: lib/sustenta_web/templates/question/edit.html.slim:1
+#: lib/sustenta_web/templates/question/new.html.slim:1
+#: lib/sustenta_web/templates/question/show.html.slim:1
+#: lib/sustenta_web/templates/standard/edit.html.slim:1
+#: lib/sustenta_web/templates/standard/new.html.slim:1
+#: lib/sustenta_web/templates/standard/show.html.slim:1
+#: lib/sustenta_web/templates/survey_template/edit.html.slim:1
+#: lib/sustenta_web/templates/survey_template/new.html.slim:1
+#: lib/sustenta_web/templates/survey_template/show.html.slim:1
+msgid "Back"
+msgstr "Atrás"

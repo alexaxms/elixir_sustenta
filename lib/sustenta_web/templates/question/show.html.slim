@@ -8,6 +8,6 @@ ul
     strong Type:&nbsp;
     = @question.type
 
-= link "Edit", to: Routes.question_path(@conn, :edit, @question)
+= link gettext("Edit"), to: Routes.question_path(@conn, :edit, @question)
 | &nbsp;
-= link "Back", to: Routes.question_path(@conn, :index)
+= link gettext("Back"), to: Routes.question_path(@conn, :index)

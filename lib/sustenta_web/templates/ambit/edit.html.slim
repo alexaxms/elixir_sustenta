@@ -2,4 +2,4 @@ h2 Edit Ambit
 
 = render "form.html", Map.put(assigns, :action, Routes.ambit_path(@conn, :update, @ambit))
 
-= link "Back", to: Routes.ambit_path(@conn, :index)
+= link gettext("Back"), to: Routes.ambit_path(@conn, :index)

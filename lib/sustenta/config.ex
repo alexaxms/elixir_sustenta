@@ -7,8 +7,7 @@ defmodule Sustenta.Config do
   import Ecto
   alias Sustenta.Repo
 
-  alias Sustenta.Config.Ambit
-  alias Sustenta.Config.Standard
+  alias Sustenta.Config.{Ambit, Standard, SurveyTemplate}
   alias Sustenta.Config
 
   @doc """
@@ -138,8 +137,11 @@ defmodule Sustenta.Config do
       ** (Ecto.NoResultsError)
 
   """
-  def get_standard!(id), do: Repo.get!(Standard, id)
-
+  def get_standard!(id) do 
+    Repo.get!(Standard, id) 
+    |> Repo.preload([survey_templates: (from t in SurveyTemplate, order_by: t.id)])
+    |> Repo.preload([:ambit])
+  end
   @doc """
   Creates a standard.
 
@@ -206,5 +208,103 @@ defmodule Sustenta.Config do
     ambit
     |> build_assoc(:standards)
     |> Standard.changeset(%{})
+  end
+
+  @doc """
+  Returns the list of config_survey_templates.
+
+  ## Examples
+
+      iex> list_config_survey_templates()
+      [%SurveyTemplate{}, ...]
+
+  """
+  def list_survey_templates(standard), do: Repo.all(assoc(standard, :survey_templates))
+
+  @doc """
+  Gets a single survey_template.
+
+  Raises `Ecto.NoResultsError` if the Survey template does not exist.
+
+  ## Examples
+
+      iex> get_survey_template!(123)
+      %SurveyTemplate{}
+
+      iex> get_survey_template!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_survey_template!(id), do: Repo.get!(SurveyTemplate, id)
+
+  @doc """
+  Creates a survey_template.
+
+  ## Examples
+
+      iex> create_survey_template(%{field: value})
+      {:ok, %SurveyTemplate{}}
+
+      iex> create_survey_template(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_survey_template(standard, attrs \\ %{}) do
+    standard
+    |> build_assoc(:survey_templates)
+    |> SurveyTemplate.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a survey_template.
+
+  ## Examples
+
+      iex> update_survey_template(survey_template, %{field: new_value})
+      {:ok, %SurveyTemplate{}}
+
+      iex> update_survey_template(survey_template, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_survey_template(%SurveyTemplate{} = survey_template, attrs) do
+    survey_template
+    |> SurveyTemplate.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a SurveyTemplate.
+
+  ## Examples
+
+      iex> delete_survey_template(survey_template)
+      {:ok, %SurveyTemplate{}}
+
+      iex> delete_survey_template(survey_template)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_survey_template(%SurveyTemplate{} = survey_template) do
+    Repo.delete(survey_template)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking survey_template changes.
+
+  ## Examples
+
+      iex> change_survey_template(survey_template)
+      %Ecto.Changeset{source: %SurveyTemplate{}}
+
+  """
+
+  def change_survey_template(survey_template), do: SurveyTemplate.changeset(survey_template, %{})
+
+  def build_survey_template(standard) do 
+    standard
+    |> build_assoc(:survey_templates)
+    |> SurveyTemplate.changeset(%{})
   end
 end

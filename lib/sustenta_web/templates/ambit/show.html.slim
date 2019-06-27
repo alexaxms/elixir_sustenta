@@ -8,9 +8,9 @@ ul
     strong Name:&nbsp;
     = @ambit.name
 
-= link "Edit", to: Routes.ambit_path(@conn, :edit, @ambit)
+= link gettext("Edit"), to: Routes.ambit_path(@conn, :edit, @ambit)
 | &nbsp;
-= link "Back", to: Routes.ambit_path(@conn, :index)
+= link gettext("Back"), to: Routes.ambit_path(@conn, :index)
 br
 br
 h2 Criterios

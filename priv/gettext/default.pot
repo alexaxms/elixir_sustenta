@@ -23,14 +23,21 @@ msgid "Edit %{name}"
 msgstr ""
 
 #, elixir-format
+#: lib/sustenta_web/templates/ambit/index.html.slim:1
+#: lib/sustenta_web/templates/ambit/show.html.slim:1
 #: lib/sustenta_web/templates/answer/index.html.slim:1
 #: lib/sustenta_web/templates/standard/index.html.slim:1
+#: lib/sustenta_web/templates/standard/show.html.slim:1
 msgid "Delete"
 msgstr ""
 
 #, elixir-format
+#: lib/sustenta_web/templates/ambit/index.html.slim:1
+#: lib/sustenta_web/templates/ambit/show.html.slim:1
 #: lib/sustenta_web/templates/answer/index.html.slim:1
 #: lib/sustenta_web/templates/standard/index.html.slim:1
+#: lib/sustenta_web/templates/standard/show.html.slim:1
+#: lib/sustenta_web/templates/standard/show.html.slim:1
 msgid "Edit"
 msgstr ""
 
@@ -41,8 +48,11 @@ msgid "Raw score"
 msgstr ""
 
 #, elixir-format
+#: lib/sustenta_web/templates/ambit/index.html.slim:1
+#: lib/sustenta_web/templates/ambit/show.html.slim:1
 #: lib/sustenta_web/templates/answer/index.html.slim:1
 #: lib/sustenta_web/templates/standard/index.html.slim:1
+#: lib/sustenta_web/templates/standard/show.html.slim:1
 msgid "Show"
 msgstr ""
 
@@ -58,6 +68,7 @@ msgid "Answers"
 msgstr ""
 
 #, elixir-format
+#: lib/sustenta_web/templates/ambit/show.html.slim:1
 #: lib/sustenta_web/templates/answer/index.html.slim:1
 #: lib/sustenta_web/templates/standard/index.html.slim:1
 msgid "New %{name}"
@@ -74,6 +85,26 @@ msgid "Standards"
 msgstr ""
 
 #, elixir-format
+#: lib/sustenta_web/templates/ambit/show.html.slim:1
 #: lib/sustenta_web/templates/standard/index.html.slim:1
 msgid "standard"
+msgstr ""
+
+#, elixir-format
+#: lib/sustenta_web/templates/ambit/edit.html.slim:1
+#: lib/sustenta_web/templates/ambit/new.html.slim:1
+#: lib/sustenta_web/templates/ambit/show.html.slim:1
+#: lib/sustenta_web/templates/answer/edit.html.slim:1
+#: lib/sustenta_web/templates/answer/new.html.slim:1
+#: lib/sustenta_web/templates/answer/show.html.slim:1
+#: lib/sustenta_web/templates/question/edit.html.slim:1
+#: lib/sustenta_web/templates/question/new.html.slim:1
+#: lib/sustenta_web/templates/question/show.html.slim:1
+#: lib/sustenta_web/templates/standard/edit.html.slim:1
+#: lib/sustenta_web/templates/standard/new.html.slim:1
+#: lib/sustenta_web/templates/standard/show.html.slim:1
+#: lib/sustenta_web/templates/survey_template/edit.html.slim:1
+#: lib/sustenta_web/templates/survey_template/new.html.slim:1
+#: lib/sustenta_web/templates/survey_template/show.html.slim:1
+msgid "Back"
 msgstr ""

@@ -1,0 +1,13 @@
+h2 Show Survey template
+
+ul
+  li
+    strong Name:&nbsp;
+    = @survey_template.name
+  li
+    strong Active:&nbsp;
+    = @survey_template.active
+
+= link gettext("Edit"), to: Routes.ambit_standard_survey_template_path(@conn, :edit, @standard.ambit, @standard, @survey_template)
+| &nbsp;
+= link gettext("Back"), to: Routes.ambit_standard_path(@conn, :show, @standard.ambit, @standard)

@@ -1,4 +1,4 @@
-h2 Show Standard
+h2.title Show Standard
 
 ul
   li
@@ -8,6 +8,28 @@ ul
     strong Name:&nbsp;
     = @standard.name
 
-= link "Edit", to: Routes.ambit_standard_path(@conn, :edit, @ambit, @standard)
+= link gettext("Edit"), to: Routes.ambit_standard_path(@conn, :edit, @ambit, @standard)
 | &nbsp;
-= link "Back", to: Routes.ambit_standard_path(@conn, :index, @ambit)
+= link gettext("Back"), to: Routes.ambit_standard_path(@conn, :index, @ambit)
+
+h2.title Listing Config survey templates
+
+table.table
+  thead
+    tr
+      th Name
+      th Active
+      th
+  tbody
+    = for survey_template <- @standard.survey_templates do
+      tr
+        td= survey_template.name
+        td= survey_template.active
+        td class="text-right"
+          = link gettext("Show"), to: Routes.ambit_standard_survey_template_path(@conn, :show, @ambit, @standard, survey_template), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link gettext("Edit"), to: Routes.ambit_standard_survey_template_path(@conn, :edit, @ambit, @standard, survey_template), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link gettext("Delete"), to: Routes.ambit_standard_survey_template_path(@conn, :delete, @ambit, @standard, survey_template), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Survey template", to: Routes.ambit_standard_survey_template_path(@conn, :new, @ambit, @standard)

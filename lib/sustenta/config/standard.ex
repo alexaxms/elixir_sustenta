@@ -6,6 +6,7 @@ defmodule Sustenta.Config.Standard do
     field :name, :string
     field :number, :integer
     belongs_to :ambit, Sustenta.Config.Ambit
+    has_many :survey_templates, Sustenta.Config.SurveyTemplate 
 
     timestamps()
   end

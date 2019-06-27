@@ -2,4 +2,4 @@ h2 New Answer
 
 = render "form.html", Map.put(assigns, :action, Routes.question_answer_path(@conn, :create, @question))
 
-= link "Back", to: Routes.question_answer_path(@conn, :index, @question)
+= link gettext("Back"), to: Routes.question_answer_path(@conn, :index, @question)

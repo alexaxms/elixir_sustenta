@@ -14,10 +14,10 @@ table.table
         td class="text-right"
           = link gettext("Answers"), to: Routes.question_answer_path(@conn, :index, question)
           | &nbsp;
-          = link "Show", to: Routes.question_path(@conn, :show, question), class: "btn btn-default btn-xs"
+          = link gettext("Show"), to: Routes.question_path(@conn, :show, question), class: "btn btn-default btn-xs"
           | &nbsp;
-          = link "Edit", to: Routes.question_path(@conn, :edit, question), class: "btn btn-default btn-xs"
+          = link gettext("Edit"), to: Routes.question_path(@conn, :edit, question), class: "btn btn-default btn-xs"
           | &nbsp;
-          = link "Delete", to: Routes.question_path(@conn, :delete, question), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+          = link gettext("Delete"), to: Routes.question_path(@conn, :delete, question), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
 
 = link "New Question", to: Routes.question_path(@conn, :new)
