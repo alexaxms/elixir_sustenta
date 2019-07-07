@@ -34,18 +34,26 @@ msgstr "Editar %{name}"
 #: lib/sustenta_web/templates/ambit/index.html.slim:1
 #: lib/sustenta_web/templates/ambit/show.html.slim:1
 #: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/question/index.html.slim:1
 #: lib/sustenta_web/templates/standard/index.html.slim:1
 #: lib/sustenta_web/templates/standard/show.html.slim:1
+#: lib/sustenta_web/templates/survey_template/index.html.slim:1
 msgid "Delete"
 msgstr "Eliminar"
 
 #, elixir-format
 #: lib/sustenta_web/templates/ambit/index.html.slim:1
 #: lib/sustenta_web/templates/ambit/show.html.slim:1
+#: lib/sustenta_web/templates/ambit/show.html.slim:1
 #: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/answer/show.html.slim:1
+#: lib/sustenta_web/templates/question/index.html.slim:1
+#: lib/sustenta_web/templates/question/show.html.slim:1
 #: lib/sustenta_web/templates/standard/index.html.slim:1
 #: lib/sustenta_web/templates/standard/show.html.slim:1
 #: lib/sustenta_web/templates/standard/show.html.slim:1
+#: lib/sustenta_web/templates/survey_template/index.html.slim:1
+#: lib/sustenta_web/templates/survey_template/show.html.slim:1
 msgid "Edit"
 msgstr "Editar"
 
@@ -59,8 +67,10 @@ msgstr "Puntaje bruto"
 #: lib/sustenta_web/templates/ambit/index.html.slim:1
 #: lib/sustenta_web/templates/ambit/show.html.slim:1
 #: lib/sustenta_web/templates/answer/index.html.slim:1
+#: lib/sustenta_web/templates/question/index.html.slim:1
 #: lib/sustenta_web/templates/standard/index.html.slim:1
 #: lib/sustenta_web/templates/standard/show.html.slim:1
+#: lib/sustenta_web/templates/survey_template/index.html.slim:1
 msgid "Show"
 msgstr "Ver"
 
@@ -116,3 +126,8 @@ msgstr "criterio"
 #: lib/sustenta_web/templates/survey_template/show.html.slim:1
 msgid "Back"
 msgstr "Atrás"
+
+#, elixir-format
+#: lib/sustenta_web/templates/pow/registration/edit.html.eex:4
+msgid "Oops, something went wrong! Please check the errors below."
+msgstr "Algo anda mal! Por favor revisa los errores de abajo."

@@ -1,28 +1,44 @@
-<h1>Register</h1>
-
 <%= form_for @changeset, @action, [as: :user], fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
+      <p><%= gettext("Oops, something went wrong! Please check the errors below.")%></p>
     </div>
   <% end %>
-
-  <%= label f, Pow.Ecto.Schema.user_id_field(@changeset) %>
-  <%= text_input f, Pow.Ecto.Schema.user_id_field(@changeset) %>
-  <%= error_tag f, Pow.Ecto.Schema.user_id_field(@changeset) %>
-
-  <%= label f, :password %>
-  <%= password_input f, :password %>
-  <%= error_tag f, :password %>
-
-  <%= label f, :confirm_password %>
-  <%= password_input f, :confirm_password %>
-  <%= error_tag f, :confirm_password %>
-
-  <div>
-    <%= submit "Register" %>
+  <br>
+  <div class="container">
+    <div class="columns is-centered">
+      <article class="card column is-half is-rounded">
+        <div class="card-content">
+          <h1 class="title">   
+            Registrarse
+          </h1>
+          <br>
+          <p class="control has-icon">
+            <%= text_input f, Pow.Ecto.Schema.user_id_field(@changeset), placeholder: "Email", class: "input", type: "email"%>
+            <i class="fa fa-envelope"></i>
+            <%= error_tag f, Pow.Ecto.Schema.user_id_field(@changeset) %>
+          </p>
+          <br>
+          <p class="control has-icon">
+            <%= password_input f, :password, placeholder: "Password", class: "input", type: "password" %>
+            <i class="fa fa-lock"></i>
+            <%= error_tag f, :password %>
+          </p>
+          <br>
+          <p class="control has-icon">
+            <%= password_input f, :confirm_password, placeholder: "Confirme Password", class: "input", type: "password" %>
+            <i class="fa fa-lock"></i>
+            <%= error_tag f, :confirm_password %>
+          </p>
+          <br>
+          <p class="control">
+            <%= submit "Registrarse", class: "button is-primary is-medium is-fullwidth" %>
+            <i class="fa fa-user"></i>
+          </p>
+          <br>
+          <p>Si ya tienes una cuenta, ingresa  <span><%= link "aquí", to: Routes.pow_session_path(@conn, :new) %></span></p>
+        </div>
+      </article>
+    </div>
   </div>
 <% end %>
-
-
-<span><%= link "Sign in", to: Routes.pow_session_path(@conn, :new) %></span>

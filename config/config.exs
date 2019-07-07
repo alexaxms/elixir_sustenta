@@ -33,7 +33,8 @@ config :sustenta, SustentaWeb.Gettext, default_locale: "es"
 
 config :sustenta, :pow,
   user: Sustenta.Users.User,
-  repo: Sustenta.Repo
+  repo: Sustenta.Repo,
+  web_module: SustentaWeb
 
 config :phoenix, :template_engines,
   slim: PhoenixSlime.Engine,

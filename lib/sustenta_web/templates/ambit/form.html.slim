@@ -2,13 +2,15 @@
   = if @changeset.action do
     .alert.alert-danger
       p Algo anda mal! Por favor verifica los siguentes errores.
+  .columns
+    .column.is-one-third
+      = label f, :number, class: "control-label label"
+      = number_input f, :number, class: "form-control input"
+      = error_tag f, :number
+  .columns
+    .column.is-one-third
+      = label f, :name, class: "control-label label"
+      = text_input f, :name, class: "form-control input"
+      = error_tag f, :name
   .form-group
-    = label f, :number, class: "control-label"
-    = number_input f, :number, class: "form-control"
-    = error_tag f, :number
-  .form-group
-    = label f, :name, class: "control-label"
-    = text_input f, :name, class: "form-control"
-    = error_tag f, :name
-  .form-group
-    = submit "Submit", class: "btn btn-primary"
+    = submit "Guardar", class: "button is-primary"
