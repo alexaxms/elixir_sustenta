@@ -1,0 +1,22 @@
+version: '1'
+services:
+  db:
+    image: postgres
+    volumes:
+    - ./tmp/shared/postgresql:/var/lib/postgresql/data
+    - ./tmp/shared/dumps:/shared_dumps
+    ports:
+    - 5432:5432
+    env_file:
+    - config/docker.env
+  web:
+    build: .
+    command: mix phx.server
+    volumes:
+    - .:/myapp
+    ports:
+    - "80:4000"
+    env_file:
+    - config/docker.env
+    links:
+    - db
