@@ -7,20 +7,25 @@ header.header
   nav.navbar aria-label=("dropdown navigation") role="navigation" 
     .navbar-menu
       .navbar-start
+        = if @current_user do 
+          = if company(@current_user) do
+            = link "Compañia", to: Routes.company_path(@conn, :show), class: "navbar-item"
+            //For normal user
+            = if @current_user do 
+              = for ambit <- ambits do
+                  .navbar-item.has-dropdown.is-hoverable
+                      = link ambit.name, to: Routes.ambit_path(@conn, :index), class: "navbar-link"
+                      .navbar-dropdown.is-boxed
+                          = for standard <- ambit.standards do
+                              = link standard.name, to: Routes.ambit_standard_path(@conn, :show, ambit, standard), class: "navbar-item"
+          - else
+            = link "Compañia", to: Routes.company_path(@conn, :new), class: "navbar-item"
         = link "Preguntas", to: Routes.question_path(@conn, :index), class: "navbar-item"
         .navbar-item.has-dropdown.is-hoverable
           = link "Ámbitos", to: Routes.ambit_path(@conn, :index), class: "navbar-link"
           .navbar-dropdown.is-boxed
             = for ambit <- ambits do
               = link ambit.name, to: Routes.ambit_path(@conn, :show, ambit), class: "navbar-item"
-      //For normal user
-      = if @current_user do 
-        = for ambit <- ambits do
-            .navbar-item.has-dropdown.is-hoverable
-                = link ambit.name, to: Routes.ambit_path(@conn, :index), class: "navbar-link"
-                .navbar-dropdown.is-boxed
-                    = for standard <- ambit.standards do
-                        = link standard.name, to: Routes.ambit_standard_path(@conn, :show, ambit, standard), class: "navbar-item"
 
       .navbar-end
         = if @current_user do 

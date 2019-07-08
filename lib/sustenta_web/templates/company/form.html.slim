@@ -1,0 +1,96 @@
+= form_for @changeset, @action, fn f ->
+  = if @changeset.action do
+    .alert.alert-danger
+      p Algo anda mal! Por favor verifica los siguentes errores.
+  .columns
+    .column.is-one-third
+      = label f, :name, class: "control-label label"
+      = text_input f, :name, class: "form-control input"
+      = error_tag f, :name
+  .columns
+    .column.is-one-third
+      = label f, :social_reason, class: "control-label label"
+      = text_input f, :social_reason, class: "form-control input"
+      = error_tag f, :social_reason
+  .columns
+    .column.is-one-third
+      = label f, :rut, class: "control-label label"
+      = text_input f, :rut, class: "form-control input"
+      = error_tag f, :rut
+  .columns
+    .column.is-one-third
+      = label f, :website, class: "control-label label"
+      = text_input f, :website, class: "form-control input"
+      = error_tag f, :website
+  .columns
+    .column.is-one-third
+      = label f, :email, class: "control-label label"
+      = text_input f, :email, class: "form-control input"
+      = error_tag f, :email
+  .columns
+    .column.is-one-third
+      = label f, :agent, class: "control-label label"
+      = text_input f, :agent, class: "form-control input"
+      = error_tag f, :agent
+  .columns
+    .column.is-one-third
+      = label f, :phone, class: "control-label label"
+      = text_input f, :phone, class: "form-control input"
+      = error_tag f, :phone
+  .columns
+    .column.is-one-third
+      = label f, :address, class: "control-label label"
+      = text_input f, :address, class: "form-control input"
+      = error_tag f, :address
+  .columns
+    .column.is-one-third
+      = label f, :type, class: "control-label label"
+      = text_input f, :type, class: "form-control input"
+      = error_tag f, :type
+  .columns
+    .column.is-one-third
+      = label f, :aim, class: "control-label label"
+      = text_input f, :aim, class: "form-control input"
+      = error_tag f, :aim
+  .columns
+    .column.is-one-third
+      = label f, :branches, class: "control-label label"
+      = text_input f, :branches, class: "form-control input"
+      = error_tag f, :branches
+  .columns
+    .column.is-one-third
+      = label f, :start_of_activities, class: "control-label label"
+      = text_input f, :start_of_activities, class: "form-control input"
+      = error_tag f, :start_of_activities
+  .columns
+    .column.is-one-third
+      = label f, :code, class: "control-label label"
+      = text_input f, :code, class: "form-control input"
+      = error_tag f, :code
+  .columns
+    .column.is-one-third
+      = label f, :business_activity, class: "control-label label"
+      = text_input f, :business_activity, class: "form-control input"
+      = error_tag f, :business_activity
+  .columns
+    .column.is-one-third
+      = label f, :size, class: "control-label label"
+      = text_input f, :size, class: "form-control input"
+      = error_tag f, :size
+  .columns
+    .column.is-one-third
+      = label f, :offer, class: "control-label label"
+      = text_input f, :offer, class: "form-control input"
+      = error_tag f, :offer
+  .columns
+    .column.is-one-third
+      = label f, :region, class: "control-label label"
+      = text_input f, :region, class: "form-control input"
+      = error_tag f, :region
+  .columns
+    .column.is-one-third
+      = label f, :statement, class: "control-label label"
+      = text_input f, :statement, class: "form-control input"
+      = error_tag f, :statement
+  .form-group
+    = submit "Guardar", class: "button is-primary"

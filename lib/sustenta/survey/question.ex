@@ -1,6 +1,14 @@
 defmodule Sustenta.Survey.Question do
   use Ecto.Schema
   import Ecto.Changeset
+  import EnumsHelper
+
+  enum "type" do
+    %{
+      single: 0,
+      multi: 1
+    }
+  end
 
   schema "survey_questions" do
     field :question, :string

@@ -1,6 +1,14 @@
 defmodule Sustenta.Survey.Answer do
   use Ecto.Schema
   import Ecto.Changeset
+  import EnumsHelper
+
+  enum "type" do
+    %{
+      default: 0,
+      attachment: 1
+    }
+  end
 
   schema "survey_answers" do
     field :order, :integer

@@ -1,0 +1,5 @@
+h2.title Edit Company
+
+= render "form.html", Map.put(assigns, :action, Routes.company_path(@conn, :update))
+
+= link gettext("Back"), to: Routes.company_path(@conn, :show)

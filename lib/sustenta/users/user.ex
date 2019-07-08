@@ -6,5 +6,6 @@ defmodule Sustenta.Users.User do
     pow_user_fields()
 
     timestamps()
+    has_one :company, Sustenta.Users.Company
   end
 end

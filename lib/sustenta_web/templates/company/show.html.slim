@@ -1,0 +1,76 @@
+h2.title = @company.name
+
+ul
+  li
+    strong Razón Social:&nbsp;
+    = @company.social_reason
+ul
+  li
+    strong Rut:&nbsp;
+    = @company.rut
+ul
+  li
+    strong Sitio Web:&nbsp;
+    = @company.website
+ul
+  li
+    strong Email:&nbsp;
+    = @company.email
+ul
+  li
+    strong Representante:&nbsp;
+    = @company.agent
+ul
+  li
+    strong Teléfono:&nbsp;
+    = @company.phone
+ul
+  li
+    strong Dirección:&nbsp;
+    = @company.address
+ul
+  li
+    strong Tipo:&nbsp;
+    = @company.type
+ul
+  li
+    strong Fin:&nbsp;
+    = @company.aim
+ul
+  li
+    strong Número de oficinas:&nbsp;
+    = @company.branches
+
+ul
+  li
+    strong Inicio de actividades:&nbsp;
+    = @company.start_of_activities
+ul
+  li
+    strong Código de actividad:&nbsp;
+    = @company.code
+ul
+  li
+    strong Actividad de empresa:&nbsp;
+    = @company.business_activity
+ul
+  li
+    strong Tamaño:&nbsp;
+    = @company.size
+ul
+  li
+    strong Oferta de empresa:&nbsp;
+    = @company.offer
+ul
+  li
+    strong Región:&nbsp;
+    = @company.region
+ul
+  li
+    strong Declaración Jurada:&nbsp;
+    = @company.statement
+
+
+= link gettext("Edit"), to: Routes.company_path(@conn, :edit)
+| &nbsp;
+= link gettext("Back"), to: Routes.page_path(@conn, :index)

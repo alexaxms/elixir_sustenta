@@ -37,6 +37,8 @@ defmodule SustentaWeb.Router do
     resources "/questions", QuestionController do
       resources "/answers", AnswerController
     end
+
+    resources "/company", CompanyController, singleton: true
   end
 
   scope "/", SustentaWeb do
