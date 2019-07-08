@@ -2,4 +2,4 @@ h2 Edit Survey template
 
 = render "form.html", Map.put(assigns, :action, Routes.ambit_survey_template_path(@conn, :update, @ambit, @survey_template))
 
-= link gettext("Back"), to: Routes.ambit_path(@conn, :show, @ambit)
+= link gettext("Back"), to: Routes.ambit_survey_template_path(@conn, :show, @ambit, @survey_template)

@@ -64,6 +64,6 @@ defmodule SustentaWeb.SurveyTemplateController do
 
     conn
     |> put_flash(:info, "Survey template deleted successfully.")
-    |> redirect(to: Routes.ambit_standard_path(conn, :show, ambit))
+    |> redirect(to: Routes.ambit_survey_template_path(conn, :show, ambit))
   end
 end
