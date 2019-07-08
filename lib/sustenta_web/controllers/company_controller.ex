@@ -15,7 +15,7 @@ defmodule SustentaWeb.CompanyController do
       {:ok, company} ->
         conn
         |> put_flash(:info, "Company created successfully.")
-        |> redirect(to: Routes.company_path(conn, :show, company))
+        |> redirect(to: Routes.company_path(conn, :show))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
