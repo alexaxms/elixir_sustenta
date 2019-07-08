@@ -7,15 +7,15 @@ table.table
       th Active
       th
   tbody
-    = for survey_template <- @config_survey_templates do
+    = for survey_template <- @survey_templates do
       tr
         td= survey_template.name
         td= survey_template.active
         td class="text-right"
-          = link gettext("Show"), to: Routes.ambit_standard_survey_template_path(@conn, :show, survey_template), class: "btn btn-default btn-xs"
+          = link (gettext "Show"), to: Routes.ambit_survey_template_path(@conn, :show, @ambit, survey_template), class: "btn btn-default btn-xs"
           | &nbsp;
-          = link gettext("Edit"), to: Routes.ambit_standard_survey_template_path(@conn, :edit, survey_template), class: "btn btn-default btn-xs"
+          = link (gettext "Edit"), to: Routes.ambit_survey_template_path(@conn, :edit, @ambit, survey_template), class: "btn btn-default btn-xs"
           | &nbsp;
-          = link gettext("Delete"), to: Routes.ambit_standard_survey_template_path(@conn, :delete, survey_template), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+          = link (gettext "Delete"), to: Routes.ambit_survey_template_path(@conn, :delete, @ambit, survey_template), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
 
-= link "New Survey template", to: Routes.ambit_standard_survey_template_path(@conn, :new)
+= link gettext("New %{name}", name: gettext "survey_template"), to: Routes.ambit_survey_template_path(@conn, :new, @ambit)

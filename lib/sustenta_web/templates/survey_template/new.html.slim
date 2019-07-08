@@ -1,5 +1,5 @@
 h2 New Survey template
 
-= render "form.html", Map.put(assigns, :action, Routes.ambit_standard_survey_template_path(@conn, :create, @standard.ambit.id, @standard))
+= render "form.html", Map.put(assigns, :action, Routes.ambit_survey_template_path(@conn, :create, @ambit))
 
-= link gettext("Back"), to: Routes.ambit_standard_survey_template_path(@conn, :index, @standard.ambit.id, @standard)
+= link gettext("Back"), to: Routes.ambit_path(@conn, :show, @ambit)

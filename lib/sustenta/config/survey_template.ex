@@ -5,7 +5,8 @@ defmodule Sustenta.Config.SurveyTemplate do
   schema "config_survey_templates" do
     field :active, :boolean, default: false
     field :name, :string
-    belongs_to :standard, Sustenta.Config.Standard
+    belongs_to :ambit, Sustenta.Config.Ambit
+    
 
     timestamps()
   end

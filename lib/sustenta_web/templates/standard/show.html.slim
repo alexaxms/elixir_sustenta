@@ -26,10 +26,10 @@ table.table
         td= survey_template.name
         td= survey_template.active
         td class="text-right"
-          = link gettext("Show"), to: Routes.ambit_standard_survey_template_path(@conn, :show, @ambit, @standard, survey_template), class: "btn btn-default btn-xs"
+          = link gettext("Show"), to: Routes.ambit_survey_template_path(@conn, :show, @ambit, @standard, survey_template), class: "btn btn-default btn-xs"
           | &nbsp;
-          = link gettext("Edit"), to: Routes.ambit_standard_survey_template_path(@conn, :edit, @ambit, @standard, survey_template), class: "btn btn-default btn-xs"
+          = link gettext("Edit"), to: Routes.ambit_survey_template_path(@conn, :edit, @ambit, @standard, survey_template), class: "btn btn-default btn-xs"
           | &nbsp;
-          = link gettext("Delete"), to: Routes.ambit_standard_survey_template_path(@conn, :delete, @ambit, @standard, survey_template), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+          = link gettext("Delete"), to: Routes.ambit_survey_template_path(@conn, :delete, @ambit, @standard, survey_template), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
 
-= link "New Survey template", to: Routes.ambit_standard_survey_template_path(@conn, :new, @ambit, @standard)
+= link "New Survey template", to: Routes.ambit_survey_template_path(@conn, :new, @ambit, @standard)

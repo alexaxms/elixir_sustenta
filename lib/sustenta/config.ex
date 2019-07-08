@@ -42,6 +42,11 @@ defmodule Sustenta.Config do
 
   """
   def get_ambit!(id), do: Repo.get!(Ambit, id)
+
+  def get_ambit_with_children!(id) do
+    get_ambit_with_standards!(id)
+    |> Repo.preload([:survey_templates])
+  end
   
   def get_ambit_with_standards!(id), do: get_ambit!(id) |> Repo.preload([standards: (from s in Standard, order_by: s.number)])
 
@@ -139,7 +144,6 @@ defmodule Sustenta.Config do
   """
   def get_standard!(id) do 
     Repo.get!(Standard, id) 
-    |> Repo.preload([survey_templates: (from t in SurveyTemplate, order_by: t.id)])
     |> Repo.preload([:ambit])
   end
   @doc """
@@ -219,7 +223,7 @@ defmodule Sustenta.Config do
       [%SurveyTemplate{}, ...]
 
   """
-  def list_survey_templates(standard), do: Repo.all(assoc(standard, :survey_templates))
+  def list_survey_templates(ambit), do: Repo.all(assoc(ambit, :survey_templates))
 
   @doc """
   Gets a single survey_template.
@@ -249,8 +253,8 @@ defmodule Sustenta.Config do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_survey_template(standard, attrs \\ %{}) do
-    standard
+  def create_survey_template(ambit, attrs \\ %{}) do
+    ambit
     |> build_assoc(:survey_templates)
     |> SurveyTemplate.changeset(attrs)
     |> Repo.insert()
@@ -302,8 +306,8 @@ defmodule Sustenta.Config do
 
   def change_survey_template(survey_template), do: SurveyTemplate.changeset(survey_template, %{})
 
-  def build_survey_template(standard) do 
-    standard
+  def build_survey_template(ambit) do 
+    ambit
     |> build_assoc(:survey_templates)
     |> SurveyTemplate.changeset(%{})
   end
