@@ -12,7 +12,7 @@ RUN apk add --update \
 
 RUN mix do local.hex --force, local.rebar --force
 COPY mix.exs mix.lock ./
-RUN MIX_ENV=prod mix do deps.get, deps.compile
+RUN MIX_ENV=dev mix do deps.get, deps.compile
 
 COPY assets ./assets
 RUN cd assets/ && \
@@ -22,4 +22,4 @@ RUN cd assets/ && \
     cd -
 
 COPY . ./
-RUN MIX_ENV=prod mix do compile, phx.digest
+RUN MIX_ENV=dev mix do compile, phx.digest

@@ -71,5 +71,5 @@ config :sustenta, Sustenta.Repo,
   username: "postgres",
   password: "postgres",
   database: "sustenta_dev",
-  hostname: "localhost",
+  hostname: "db", #Cambiar al utilizar en local
   pool_size: 10

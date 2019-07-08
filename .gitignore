@@ -72,3 +72,5 @@ erl_crash.dump
 # Also ignore temp files created during testing
 **/test/tmp
 .DS_Store
+
+/temp

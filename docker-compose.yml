@@ -1,4 +1,4 @@
-version: '1'
+version: '3'
 services:
   db:
     image: postgres
@@ -11,12 +11,13 @@ services:
     - config/docker.env
   web:
     build: .
-    command: mix phx.server
+    command:
+      - ./run.sh
     volumes:
     - .:/myapp
     ports:
     - "80:4000"
     env_file:
     - config/docker.env
-    links:
+    depends_on:
     - db
